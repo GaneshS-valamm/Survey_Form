@@ -1,0 +1,224 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #111827;
+  background: linear-gradient(135deg, #fdf2f8 0%, #eef2ff 45%, #ecfeff 100%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+* { box-sizing: border-box; }
+
+button, input { font: inherit; }
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero {
+  text-align: center;
+  color: #312e81;
+  padding: 28px 0;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4338ca;
+}
+
+.card {
+  width: min(940px, 100%);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 24px 55px rgba(79, 70, 229, 0.14);
+  border: 1px solid rgba(129, 140, 248, 0.25);
+  border-radius: 28px;
+  padding: 30px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+}
+
+button:hover { transform: translateY(-1px); }
+
+.name-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 16px;
+  background: #f8faff;
+}
+
+.question-card {
+  border: 1px solid #e0e7ff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+}
+
+.option-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.options-list { display: flex; flex-direction: column; gap: 4px; }
+.hint { color: #6b7280; font-size: 0.95rem; }
+.error { color: #dc2626; font-size: 0.95rem; }
+.success { text-align: center; }
+.admin-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+.stat-pill {
+  background: linear-gradient(135deg, #eff6ff, #ede9fe);
+  color: #4338ca;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+.summary-card, .response-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+.admin-card {
+  background: linear-gradient(180deg, rgba(247, 245, 255, 0.95), rgba(236, 245, 255, 0.96));
+}
+
+.admin-subtitle {
+  margin-top: 4px;
+  color: #5b3d91;
+  font-size: 1rem;
+  margin-bottom: 22px;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, #eef2ff, #ede9fe);
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  padding: 18px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.insight-title {
+  color: #4338ca;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.insight-value {
+  font-size: 1.5rem;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.charts-panel {
+  margin-top: 22px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #e0e7ff;
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 280px;
+}
+
+.chart-card.full-width {
+  grid-column: span 2;
+}
+
+.insights-panel {
+  margin-top: 26px;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  border: 1px solid #dbeafe;
+}
+
+.insight-text {
+  color: #334155;
+  line-height: 1.8;
+}
+
+.section-heading {
+  margin: 0 0 12px;
+  color: #4338ca;
+}
+
+.summary-card {
+  padding: 24px;
+}
+
+.response-card {
+  border: 1px solid #dbeafe;
+  padding: 18px;
+  background: #fff;
+}
+
+.response-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #4f46e5;
+}
+
+.responses-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.button-secondary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}

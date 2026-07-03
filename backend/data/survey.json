@@ -1,0 +1,235 @@
+{
+  "survey": {
+    "id": "global-ai-isv-india-expansion",
+    "title": "Global AI/ISV India Expansion — Adaptive Survey",
+    "version": "1.0",
+    "description": "Adaptive survey to assess AI/ISV company intent and readiness for expansion into the India market.",
+    "branchingLogic": {
+      "branchA": {
+        "label": "Considering Expansion",
+        "trigger": { "questionId": "Q4", "optionValue": "yes_actively_evaluating" },
+        "questions": ["Q5a", "Q6a", "Q7a", "Q8a", "Q9a", "Q10", "Q11"]
+      },
+      "branchB": {
+        "label": "Not Considering / Unsure",
+        "trigger": { "questionId": "Q4", "optionValues": ["no_not_considering", "not_sure"] },
+        "questions": ["Q5b", "Q6b", "Q7b", "Q10", "Q11"]
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "questionNumber": 1,
+      "section": "Core — Always Asked",
+      "text": "Which best describes your company's primary domain?",
+      "type": "single_select",
+      "required": true,
+      "options": [
+        {"value": "ai_ml_infra", "label": "AI / Machine Learning Infrastructure & Tooling"},
+        {"value": "enterprise_saas", "label": "Enterprise SaaS / Vertical Software"},
+        {"value": "developer_tools_devops", "label": "Developer Tools / DevOps"},
+        {"value": "other", "label": "Other", "allowFreeText": true, "freeTextPlaceholder": "Please describe your primary domain"}
+      ],
+      "nextQuestion": "Q2"
+    },
+    {
+      "id": "Q2",
+      "questionNumber": 2,
+      "section": "Core — Always Asked",
+      "text": "When you think about markets outside your current footprint, where does India currently sit?",
+      "type": "single_select",
+      "required": true,
+      "options": [
+        {"value": "actively_evaluating_near_term", "label": "Actively evaluating it as a near-term priority"},
+        {"value": "on_list_not_priority", "label": "On the list, but not a priority"},
+        {"value": "not_on_radar", "label": "Not currently on our radar"},
+        {"value": "looked_and_ruled_out", "label": "Looked at it and ruled it out"}
+      ],
+      "nextQuestion": "Q3"
+    },
+    {
+      "id": "Q3",
+      "questionNumber": 3,
+      "section": "Core — Always Asked",
+      "text": "Has your team done any concrete research or internal discussion about India specifically?",
+      "type": "single_select",
+      "required": true,
+      "options": [
+        {"value": "yes_formal_research", "label": "Yes, formal research or discussion has happened"},
+        {"value": "some_informal", "label": "Some informal conversations, nothing formal"},
+        {"value": "no_not_yet", "label": "No, haven't gotten that far"}
+      ],
+      "nextQuestion": "Q4"
+    },
+    {
+      "id": "Q4",
+      "questionNumber": 4,
+      "section": "Core — Always Asked (Branch Point)",
+      "text": "Is your company currently considering expansion into the India market?",
+      "type": "single_select",
+      "required": true,
+      "isBranchPoint": true,
+      "options": [
+        {"value": "yes_actively_evaluating", "label": "Yes, actively evaluating"},
+        {"value": "no_not_considering", "label": "No, not currently considering"},
+        {"value": "not_sure", "label": "Not sure / too early to say"}
+      ],
+      "nextQuestion": null,
+      "branchingRules": [
+        {"condition": {"optionValue": "yes_actively_evaluating"}, "branch": "A", "nextQuestion": "Q5a"},
+        {"condition": {"optionValues": ["no_not_considering", "not_sure"]}, "branch": "B", "nextQuestion": "Q5b"}
+      ]
+    },
+    {
+      "id": "Q5a",
+      "questionNumber": "5a",
+      "section": "Branch A — Considering Expansion",
+      "text": "What makes India most attractive for your expansion?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValue": "yes_actively_evaluating"},
+      "options": [
+        {"value": "talent_pool", "label": "Large, fast-growing talent pool"},
+        {"value": "market_size_demand", "label": "Market size / customer demand"},
+        {"value": "cost_efficiency", "label": "Cost efficiency"},
+        {"value": "govt_incentives", "label": "Government incentives / policy environment"}
+      ],
+      "nextQuestion": "Q6a"
+    },
+    {
+      "id": "Q6a",
+      "questionNumber": "6a",
+      "section": "Branch A — Considering Expansion",
+      "text": "Are you aware of the Government of India's initiatives to promote AI, digital infrastructure, and cybersecurity?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValue": "yes_actively_evaluating"},
+      "options": [
+        {"value": "yes_very_familiar", "label": "Yes, very familiar"},
+        {"value": "somewhat_familiar", "label": "Somewhat familiar"},
+        {"value": "need_more_info", "label": "Need more information"},
+        {"value": "not_aware", "label": "Not aware"}
+      ],
+      "nextQuestion": "Q7a"
+    },
+    {
+      "id": "Q7a",
+      "questionNumber": "7a",
+      "section": "Branch A — Considering Expansion",
+      "text": "What is your biggest hesitation about expanding into India?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValue": "yes_actively_evaluating"},
+      "options": [
+        {"value": "regulatory_compliance", "label": "Regulatory/compliance complexity"},
+        {"value": "data_localisation", "label": "Data localization / infrastructure concerns"},
+        {"value": "competitive_market", "label": "Competitive/crowded market"},
+        {"value": "talent_attrition", "label": "Talent retention & attrition risk"}
+      ],
+      "nextQuestion": "Q8a"
+    },
+    {
+      "id": "Q8a",
+      "questionNumber": "8a",
+      "section": "Branch A — Considering Expansion",
+      "text": "Which expansion model best fits your company right now?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValue": "yes_actively_evaluating"},
+      "options": [
+        {"value": "gcc_owned_entity", "label": "Global Capability Center (GCC) / owned entity"},
+        {"value": "go_to_market_partner", "label": "Go To Market Partner"},
+        {"value": "partnership_reseller", "label": "Partnership or reseller model"},
+        {"value": "channel_distributor", "label": "Channel/distributor arrangement"},
+        {"value": "not_yet_decided", "label": "Not yet decided"}
+      ],
+      "nextQuestion": "Q9a"
+    },
+    {
+      "id": "Q9a",
+      "questionNumber": "9a",
+      "section": "Branch A — Considering Expansion",
+      "text": "What's a realistic timeline for India expansion?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValue": "yes_actively_evaluating"},
+      "options": [
+        {"value": "within_6_months", "label": "Within the next 6 months"},
+        {"value": "6_to_18_months", "label": "6–18 months"},
+        {"value": "18_plus_no_fixed", "label": "18+ months / no fixed timeline"}
+      ],
+      "nextQuestion": "Q10"
+    },
+    {
+      "id": "Q5b",
+      "questionNumber": "5b",
+      "section": "Branch B — Not Considering / Unsure",
+      "text": "What's the main reason India isn't currently on your expansion roadmap?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValues": ["no_not_considering", "not_sure"]},
+      "options": [
+        {"value": "not_strategic_priority", "label": "Not a strategic priority right now"},
+        {"value": "regulatory_concerns", "label": "Regulatory/compliance concerns"},
+        {"value": "unclear_roi", "label": "Unclear ROI / market fit uncertainty"},
+        {"value": "bad_experience_perception", "label": "Bad prior experience or perception risk"}
+      ],
+      "nextQuestion": "Q6b"
+    },
+    {
+      "id": "Q6b",
+      "questionNumber": "6b",
+      "section": "Branch B — Not Considering / Unsure",
+      "text": "What would need to change for India to become a consideration?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValues": ["no_not_considering", "not_sure"]},
+      "options": [
+        {"value": "clearer_regulatory_framework", "label": "Clearer regulatory / data framework"},
+        {"value": "proof_of_demand", "label": "Proof of demand"},
+        {"value": "local_partner_entity", "label": "Available local partner/entity"},
+        {"value": "nothing_not_on_roadmap", "label": "Nothing — not on the roadmap"}
+      ],
+      "nextQuestion": "Q7b"
+    },
+    {
+      "id": "Q7b",
+      "questionNumber": "7b",
+      "section": "Branch B — Not Considering / Unsure",
+      "text": "Even without active plans, is there a rough timeframe where you'd revisit this?",
+      "type": "single_select",
+      "required": true,
+      "displayCondition": {"questionId": "Q4", "optionValues": ["no_not_considering", "not_sure"]},
+      "options": [
+        {"value": "within_12_months", "label": "Within 12 months"},
+        {"value": "1_to_2_years", "label": "1–2 years"},
+        {"value": "no_plans_to_revisit", "label": "No plans to revisit"}
+      ],
+      "nextQuestion": "Q10"
+    },
+    {
+      "id": "Q10",
+      "questionNumber": 10,
+      "section": "Final — Always Asked (Both Branches)",
+      "text": "Would you be open to a 15-minute follow-up conversation to discuss this further?",
+      "type": "single_select",
+      "required": true,
+      "options": [
+        {"value": "yes", "label": "Yes"},
+        {"value": "no", "label": "No"},
+        {"value": "maybe_send_info", "label": "Maybe — send more information first"}
+      ],
+      "nextQuestion": "Q11"
+    },
+    {
+      "id": "Q11",
+      "questionNumber": 11,
+      "section": "Final — Always Asked (Both Branches)",
+      "text": "If yes, please provide your email below.",
+      "type": "free_text",
+      "required": false,
+      "inputPlaceholder": "your@email.com"
+    }
+  ]
+}
