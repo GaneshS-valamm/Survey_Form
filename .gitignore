@@ -1,0 +1,16 @@
+.venv/
+.env
+.env.*
+backend/survey.db
+backend/app/__pycache__/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.DS_Store
+.vscode/
+*.log
+backend/.env.example
