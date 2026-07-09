@@ -2,7 +2,7 @@
   "survey": {
     "id": "global-ai-isv-india-expansion",
     "title": "Global AI/ISV India Expansion — Adaptive Survey",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Adaptive survey to assess AI/ISV company intent and readiness for expansion into the India market.",
     "branchingLogic": {
       "branchA": {
@@ -26,10 +26,11 @@
       "type": "single_select",
       "required": true,
       "options": [
-        {"value": "ai_ml_infra", "label": "AI / Machine Learning Infrastructure & Tooling"},
-        {"value": "enterprise_saas", "label": "Enterprise SaaS / Vertical Software"},
-        {"value": "developer_tools_devops", "label": "Developer Tools / DevOps"},
-        {"value": "other", "label": "Other", "allowFreeText": true, "freeTextPlaceholder": "Please describe your primary domain"}
+        {"value": "cybersecurity", "label": "Cybersecurity"},
+        {"value": "data_platforms_analytics", "label": "Data Platforms & Analytics"},
+        {"value": "cloud_infrastructure", "label": "Cloud & Infrastructure"},
+        {"value": "enterprise_applications", "label": "Enterprise Applications"},
+        {"value": "other", "label": "Other", "allowFreeText": true, "freeTextPlaceholder": "If it is other, please mention the domain"}
       ],
       "nextQuestion": "Q2"
     },
@@ -52,7 +53,7 @@
       "id": "Q3",
       "questionNumber": 3,
       "section": "Core — Always Asked",
-      "text": "Has your team done any concrete research or internal discussion about India specifically?",
+      "text": "Has your team done any concrete research or internal discussion about India specifically — not just noted it as an option?",
       "type": "single_select",
       "required": true,
       "options": [
